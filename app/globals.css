@@ -1,0 +1,412 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* New light magazine-style color scheme for sports betting portal */
+:root {
+  /* Light, clean background - cream white paper feel */
+  --background: oklch(0.98 0.005 90);
+  --foreground: oklch(0.2 0.02 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 250);
+
+  /* Primary - Fresh Teal for trust and modernity */
+  --primary: oklch(0.5 0.14 180);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Secondary - Warm Coral for energy and action */
+  --secondary: oklch(0.65 0.18 25);
+  --secondary-foreground: oklch(0.99 0 0);
+
+  --muted: oklch(0.96 0.01 90);
+  --muted-foreground: oklch(0.45 0.02 250);
+
+  /* Accent - Golden yellow for highlights */
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: oklch(0.2 0.02 250);
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.01 90);
+  --input: oklch(0.92 0.01 90);
+  --ring: oklch(0.5 0.14 180);
+
+  --chart-1: oklch(0.5 0.14 180);
+  --chart-2: oklch(0.65 0.18 25);
+  --chart-3: oklch(0.55 0.15 145);
+  --chart-4: oklch(0.6 0.12 280);
+  --chart-5: oklch(0.75 0.15 85);
+
+  --radius: 0.5rem;
+
+  /* Magazine journal colors - light and elegant */
+  --journal-black: oklch(0.2 0.02 250);
+  --journal-charcoal: oklch(0.3 0.02 250);
+  --journal-gray: oklch(0.5 0.02 250);
+  --journal-light-gray: oklch(0.8 0.01 90);
+  --journal-border: oklch(0.9 0.01 90);
+  --journal-paper: oklch(0.98 0.005 90);
+  --journal-white: oklch(1 0 0);
+
+  /* Modern sports magazine accent colors */
+  --journal-teal: oklch(0.5 0.14 180);
+  --journal-teal-light: oklch(0.7 0.1 180);
+  --journal-coral: oklch(0.65 0.18 25);
+  --journal-green: oklch(0.55 0.15 145);
+  --journal-red: oklch(0.55 0.22 25);
+  --journal-gold: oklch(0.75 0.15 85);
+  --journal-text: oklch(0.35 0.02 250);
+
+  /* Sports brand colors */
+  --sports-blue: oklch(0.5 0.15 250);
+  --sports-green: oklch(0.55 0.18 145);
+  --sports-orange: oklch(0.7 0.18 50);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0.01 240);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0.01 240);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.15 0.01 240);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.6 0.14 180);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.65 0.15 25);
+  --secondary-foreground: oklch(0.15 0.01 240);
+  --muted: oklch(0.25 0.01 240);
+  --muted-foreground: oklch(0.65 0.02 240);
+  --accent: oklch(0.7 0.15 85);
+  --accent-foreground: oklch(0.15 0.01 240);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.25 0.01 240);
+  --input: oklch(0.25 0.01 240);
+  --ring: oklch(0.6 0.14 180);
+  --chart-1: oklch(0.6 0.14 180);
+  --chart-2: oklch(0.65 0.15 25);
+  --chart-3: oklch(0.6 0.15 145);
+  --chart-4: oklch(0.65 0.18 280);
+  --chart-5: oklch(0.7 0.15 85);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Journal color utilities */
+  --color-journal-black: var(--journal-black);
+  --color-journal-charcoal: var(--journal-charcoal);
+  --color-journal-gray: var(--journal-gray);
+  --color-journal-light-gray: var(--journal-light-gray);
+  --color-journal-border: var(--journal-border);
+  --color-journal-paper: var(--journal-paper);
+  --color-journal-white: var(--journal-white);
+  --color-journal-teal: var(--journal-teal);
+  --color-journal-teal-light: var(--journal-teal-light);
+  --color-journal-coral: var(--journal-coral);
+  --color-journal-green: var(--journal-green);
+  --color-journal-red: var(--journal-red);
+  --color-journal-gold: var(--journal-gold);
+  --color-journal-text: var(--journal-text);
+
+  /* Sports color utilities */
+  --color-sports-blue: var(--sports-blue);
+  --color-sports-green: var(--sports-green);
+  --color-sports-orange: var(--sports-orange);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair-display), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-journal-paper text-journal-text;
+  }
+}
+
+/* Modern magazine utility classes */
+.bg-journal-black {
+  background-color: var(--journal-black);
+}
+.bg-journal-charcoal {
+  background-color: var(--journal-charcoal);
+}
+.bg-journal-gray {
+  background-color: var(--journal-gray);
+}
+.bg-journal-light-gray {
+  background-color: var(--journal-light-gray);
+}
+.bg-journal-border {
+  background-color: var(--journal-border);
+}
+.bg-journal-paper {
+  background-color: var(--journal-paper);
+}
+.bg-journal-white {
+  background-color: var(--journal-white);
+}
+
+.text-journal-black {
+  color: var(--journal-black);
+}
+.text-journal-charcoal {
+  color: var(--journal-charcoal);
+}
+.text-journal-gray {
+  color: var(--journal-gray);
+}
+.text-journal-light-gray {
+  color: var(--journal-light-gray);
+}
+.text-journal-text {
+  color: var(--journal-text);
+}
+
+.border-journal-black {
+  border-color: var(--journal-black);
+}
+.border-journal-charcoal {
+  border-color: var(--journal-charcoal);
+}
+.border-journal-border {
+  border-color: var(--journal-border);
+}
+
+.bg-journal-teal {
+  background-color: var(--journal-teal);
+}
+.bg-journal-teal-light {
+  background-color: var(--journal-teal-light);
+}
+.bg-journal-coral {
+  background-color: var(--journal-coral);
+}
+.bg-journal-green {
+  background-color: var(--journal-green);
+}
+.bg-journal-red {
+  background-color: var(--journal-red);
+}
+.bg-journal-gold {
+  background-color: var(--journal-gold);
+}
+
+.text-journal-teal {
+  color: var(--journal-teal);
+}
+.text-journal-teal-light {
+  color: var(--journal-teal-light);
+}
+.text-journal-coral {
+  color: var(--journal-coral);
+}
+.text-journal-green {
+  color: var(--journal-green);
+}
+.text-journal-red {
+  color: var(--journal-red);
+}
+.text-journal-gold {
+  color: var(--journal-gold);
+}
+
+.border-journal-teal {
+  border-color: var(--journal-teal);
+}
+.border-journal-coral {
+  border-color: var(--journal-coral);
+}
+.border-journal-green {
+  border-color: var(--journal-green);
+}
+.border-journal-gold {
+  border-color: var(--journal-gold);
+}
+
+/* Sports colors */
+.bg-sports-blue {
+  background-color: var(--sports-blue);
+}
+.bg-sports-green {
+  background-color: var(--sports-green);
+}
+.bg-sports-orange {
+  background-color: var(--sports-orange);
+}
+.text-sports-blue {
+  color: var(--sports-blue);
+}
+.text-sports-green {
+  color: var(--sports-green);
+}
+.text-sports-orange {
+  color: var(--sports-orange);
+}
+
+/* Magazine decorative elements */
+.journal-divider {
+  border-top: 1px solid var(--journal-border);
+  margin: 2rem 0;
+}
+
+.journal-section-border {
+  border-top: 1px solid var(--journal-border);
+  padding-top: 3rem;
+  margin-top: 3rem;
+}
+
+/* Hero animation keyframes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Added new bounce-slow animation for hero balls */
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes draw-line {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-circle {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-delay-2 {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* New animation classes for hero */
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-draw-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-line 3s ease-out forwards;
+}
+
+.animate-draw-circle {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: draw-circle 2s ease-out 1s forwards;
+}
