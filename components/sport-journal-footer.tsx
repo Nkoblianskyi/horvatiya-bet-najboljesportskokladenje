@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { SportJournalLogo } from "./sport-journal-logo"
 
 export function SportJournalFooter() {
   return (
@@ -14,7 +13,9 @@ export function SportJournalFooter() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {/* Brand section */}
           <div className="space-y-4">
-            <SportJournalLogo />
+            <h3 className="font-serif text-xl font-bold text-white mb-3">
+              Najbolje<span className="text-journal-teal">Sportsko</span>Klađenje
+            </h3>
             <p className="text-sm text-white/70 leading-relaxed">
               Vaš pouzdani vodič kroz svijet sportskog klađenja. Pružamo nezavisne recenzije, korisne savjete i aktualne
               informacije o licenciranim kladionicama u Hrvatskoj.
